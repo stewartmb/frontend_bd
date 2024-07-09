@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Triggers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .table-title {
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificar Triggers</h1>
+    <div class="table-container">
+        <h2 class="table-title">Hosts</h2>
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Host Rating</th>
+            </tr>
+            {% for host in hosts %}
+            <tr>
+                <td>{{ host[0] }}</td>
+                <td>{{ host[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <h2 class="table-title">Guests</h2>
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Points</th>
+            </tr>
+            {% for guest in guests %}
+            <tr>
+                <td>{{ guest[0] }}</td>
+                <td>{{ guest[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2 class="table-title">Properties</h2>
+        <table>
+            <tr>
+                <th>Property ID</th>
+                <th>Rating</th>
+            </tr>
+            {% for property in properties %}
+            <tr>
+                <td>{{ property[0] }}</td>
+                <td>{{ property[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2 class="table-title">Bookings</h2>
+        <table>
+            <tr>
+                <th>Booking ID</th>
+                <th>Total Price</th>
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td>{{ booking[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<div class="top-navigation">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Regresar al Dashboard</a>
+</div>
+<h1>Usuarios</h1>
+<div class="form">
+    <form action="/users" method="POST">
+        <label for="nombre">Buscar Usuario por ID:</label>
+        <input type="text" name="nombre" id="nombre" />
+        <input type="submit" value="Buscar" />
+    </form>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

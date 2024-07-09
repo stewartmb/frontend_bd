@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Reseña</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Añadir Reseña</h1>
+    <form action="/add_review" method="post">
+        <label for="review_id">ID de Reseña:</label>
+        <input type="text" id="review_id" name="review_id" required>
+        <label for="booking_id">ID de Reserva:</label>
+        <input type="text" id="booking_id" name="booking_id" required>
+        <label for="comment">Comentario:</label>
+        <input type="text" id="comment" name="comment" required>
+        <label for="rating">Calificación:</label>
+        <input type="text" id="rating" name="rating" required>
+        <input type="submit" value="Añadir Reseña">
+    </form>
+</body>
+</html>

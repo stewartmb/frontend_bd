@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Properties{% endblock %}
+
+{% block content %}
+<div class="top-navigation">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Regresar al Dashboard</a>
+</div>
+<h1>Propiedades</h1>
+<div class="form">
+    <form action="/properties" method="POST">
+        <label for="min_price">Precio mínimo:</label>
+        <input type="text" name="min_price" id="min_price" />
+        <label for="max_price">Precio máximo:</label>
+        <input type="text" name="max_price" id="max_price" />
+        <input type="submit" value="Filtrar" />
+    </form>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID de Propiedad</th>
+            <th>Título</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for property in properties %}
+        <tr>
+            <td>{{ property[0] }}</td>
+            <td>{{ property[2] }}</td>
+            <td>{{ property[4] }}</td>
+            <td>{{ property[9] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

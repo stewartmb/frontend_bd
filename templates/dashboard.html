@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <img src="{{ url_for('static', filename='airbnb.png') }}" alt="Airbnb Logo" class="logo">
+    <h1>Universidad de Ingeniería y Tecnología</h1>
+    <h2>Ciencia de la Computación</h2>
+    <h3>Base de Datos I</h3>
+    <h4>Proyecto: Base de Datos de Airbnb</h4>
+    <h4>Integrantes:</h4>
+    <ul>
+        <li>Taco Anton, Manuel Sebastian - 202310461</li>
+        <li>Quenta Solis, Jorge Eduardo - 202310623</li>
+        <li>Maquera Bobadilla, Diva Stewart - 202310599</li>
+    </ul>
+    <h4>Docente:</h4>
+    <div class="docente">
+        <p style="display: flex; align-items: center; justify-content: center;">Chambilla Aquino, Teófilo</p>
+    </div>
+    <div class="nav-links">
+        <a href="{{ url_for('users') }}">Ver Usuarios</a>
+        <a href="{{ url_for('properties') }}">Ver Propiedades</a>
+        <a href="/add_booking">Añadir Reserva</a>
+        <a href="/add_review">Añadir Reseña</a>
+        <a href="/verify_triggers">Verificar Triggers</a>
+    </div>
+</div>
+{% endblock %}
